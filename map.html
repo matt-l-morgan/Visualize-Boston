@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <title>Visualize Boston</title>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="ZIP_Codes.geojson"></script>
+    <script src="hoursperzip.json"></script>
+</head>
+<style>
+        body {
+            position: absolute;
+        }
+        h1, h2 {
+            position: absolute;
+            left: 10px;
+            font-size: 1.3em;
+            font-weight: 100;
+        }
+        #area {
+            top: 30px;
+            font-size: 1em;
+        }
+        #hours {
+            top: 50px;
+            font-size: 1em;
+        }
+        .hover {
+            fill: yellow;   
+        }
+    </style>
+<body>
+    <h2 id=area></h2>
+    <h2 id=hours></h2>
+    <script>
+    // define width and height
+    var width = 700;
+    var height = 580;
+
+    // set color scale
+    var color = d3.scale.linear().range(["white", "steelblue"])
+    color.domain([0, d3.max(hpz_json, function(a) {return a.Hours})]);
+
+    // set width and height of svg
+    var svg = d3.select( "body" )
+        .append( "svg" )
+        .attr( "width", width )
+        .attr( "height", height );
+
+    var g = svg.append( "g" );
+
+    //define projection for the map
+    var albersProjection = d3.geo.albers()
+        .scale( 175000 )
+        .rotate( [71.057,0] )
+        .center( [0, 42.313] )
+        .translate( [width/2,height/2] );
+
+    // create a path using the defined projection    
+    var geoPath = d3.geo.path()
+        .projection( albersProjection );
+
+    // set coloration and mouseover events of map
+    g.selectAll( "path" )
+        .data( zip_json.features )
+        .enter()
+        .append( "path" )
+        .attr("fill", function(d) { return getColor(d.properties.ZIP5); })
+        .attr( "stroke", "#333")
+        .attr( "d", geoPath )
+        .attr("class", "area")
+        .on("mouseover", function(d){
+            d3.select("#area").text(getArea(d.properties.ZIP5))
+            d3.select("#hours").text(getHoursServed(d.properties.ZIP5))
+            d3.select(this).attr("class","area hover");
+        })
+        .on("mouseout", function(d){
+            d3.select("#area").text("")
+            d3.select("#hours").text("")
+            d3.select(this).attr("class","area");
+        });
+    
+    // add legend
+    svg.append("text")
+        .attr("x", "505")
+        .attr("y", "400")
+        .text("7000+");
+    svg.append("text")
+        .attr("x", "505")
+        .attr("y", "500")
+        .text("0");
+    svg.append("text")
+        .attr("x", "435")
+        .attr("y", "380")
+        .text("Hours Served")
+
+    var w = 140, h = 200;
+
+    var legend = svg.append("defs")
+                    .append("svg:linearGradient")
+                    .attr("id", "gradient")
+                    .attr("x1", "100%")
+                    .attr("y1", "0%")
+                    .attr("x2","100%")
+                    .attr("y2", "100%")
+                    .attr("spreadMethod", "pad");
+
+    legend.append("stop")
+          .attr("offset", "0%")
+          .attr("stop-color", "steelblue")
+          .attr("stop-opacity", 1);
+
+    legend.append("stop")
+          .attr("offset", "100%")
+          .attr("stop-color", "white")
+          .attr("stop-opacity", 1);
+
+    svg.append("rect")
+       .attr("width", w - 100)
+       .attr("height", h - 100)
+       .style("fill", "url(#gradient)")
+       .attr("transform", "translate(0,10)")
+       .attr("x", "460")
+       .attr("y", "380");
+
+    var y = d3.scale.linear().range([300, 0]).domain([1, 100]);
+
+    var yAxis = d3.svg.axis().scale(y).orient("right");
+
+    key.append("g")
+       .attr("class", "y axis")
+       .attr("transform", "translate(41,10)")
+       .call(yAxis)
+       .append("text")
+       .attr("transform", "rotate(-90)")
+       .attr("y", 30)
+       .attr("dy", ".71em")
+       .style("text-anchor", "end")
+       .text("axis title");
+
+// import data from csv
+    d3.csv("AllYears.csv", function(data) {
+        data.forEach(function(d) {
+            d.volunteers = +d["Total Volunteers Attended"];
+            d.hours = +d["Total Hours Served by All Volunteers"];
+            d.zip = +d["Organization Served: Primary City"];
+            d.op_name = d["Volunteer Opportunity Name"];
+            d.impact = d["Impact Area (Local)"];
+            d.vol_org = d["Requires Invitation From: Organization Name"];
+            d.org_served = d["Organization Served Name"];
+        });
+
+    });
+
+    // given a zip code determines the color it should be
+    function getColor(zip) {
+        var time = 0;
+        hpz_json.forEach(function(d) {
+            if (d.Zip == zip) {
+                time = d.Hours;
+            }
+        });
+        return color(time);
+    }
+
+    // given a zip code returns the names of the area
+    function getArea(zip) {
+        var area = null;
+        hpz_json.forEach(function(d) {
+            if (d.Zip == zip) {
+                area = d.Area;
+            }
+        });
+        return area;
+    }
+
+    // given a zip code returns the number of hours served in that area
+    function getHoursServed(zip) {
+        var hours = null;
+        hpz_json.forEach(function(d) {
+            if (d.Zip == zip) {
+                hours = d.Hours;
+            }
+        });
+        return "Total Hours Served: " + hours;
+    }
+
+    
+    </script>
+</body>

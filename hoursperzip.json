@@ -1,0 +1,553 @@
+var hpz_json =
+[
+  {
+    "Zip": 2122,
+    "Hours": 5166,
+    "Area": "Dorchester, MA"
+  },
+  {
+    "Zip": 2451,
+    "Hours": 312,
+    "Area": "Waltham, MA"
+  },
+  {
+    "Zip": 2905,
+    "Hours": 380,
+    "Area": "Providence, RI"
+  },
+  {
+    "Zip": 2124,
+    "Hours": 3417.25,
+    "Area": "Dorchester Center, MA"
+  },
+  {
+    "Zip": 1801,
+    "Hours": 269,
+    "Area": "Woburn, MA"
+  },
+  {
+    "Zip": 1803,
+    "Hours": 34,
+    "Area": "Burlington, MA"
+  },
+  {
+    "Zip": 2119,
+    "Hours": 7355.5,
+    "Area": "Roxbury, MA"
+  },
+  {
+    "Zip": 2128,
+    "Hours": 561.84,
+    "Area": "East Boston, MA"
+  },
+  {
+    "Zip": 2125,
+    "Hours": 2993.5,
+    "Area": "Dorchester, MA"
+  },
+  {
+    "Zip": 2145,
+    "Hours": 1510,
+    "Area": "Somerville, MA"
+  },
+  {
+    "Zip": 2116,
+    "Hours": 3286.5,
+    "Area": "Boston, MA"
+  },
+  {
+    "Zip": 2139,
+    "Hours": 143.5,
+    "Area": "Cambridge, MA"
+  },
+  {
+    "Zip": 2026,
+    "Hours": 1303.5,
+    "Area": "Dedham, MA"
+  },
+  {
+    "Zip": 2118,
+    "Hours": 1962,
+    "Area": "Boston, MA"
+  },
+  {
+    "Zip": 2129,
+    "Hours": 879.5,
+    "Area": "Charlestown, MA"
+  },
+  {
+    "Zip": 2143,
+    "Hours": 376,
+    "Area": "Somerville, MA"
+  },
+  {
+    "Zip": 2301,
+    "Hours": 315,
+    "Area": "Brockton, MA"
+  },
+  {
+    "Zip": 2332,
+    "Hours": 270,
+    "Area": "Duxbury, MA"
+  },
+  {
+    "Zip": 1862,
+    "Hours": 395,
+    "Area": "North Billerica, MA"
+  },
+  {
+    "Zip": 1845,
+    "Hours": 1058,
+    "Area": "North Andover, MA"
+  },
+  {
+    "Zip": 2472,
+    "Hours": 418,
+    "Area": "Watertown, MA"
+  },
+  {
+    "Zip": 2050,
+    "Hours": 190,
+    "Area": "Marshfield, MA"
+  },
+  {
+    "Zip": 2191,
+    "Hours": 145,
+    "Area": "North Weymouth, MA"
+  },
+  {
+    "Zip": 2370,
+    "Hours": 145,
+    "Area": "Rockland, MA"
+  },
+  {
+    "Zip": 2135,
+    "Hours": 4145,
+    "Area": "Brighton, MA"
+  },
+  {
+    "Zip": 2141,
+    "Hours": 451.5,
+    "Area": "Cambridge, MA"
+  },
+  {
+    "Zip": 2130,
+    "Hours": 3162,
+    "Area": "Jamaica Plain, MA"
+  },
+  {
+    "Zip": 2210,
+    "Hours": 195.25,
+    "Area": "Boston, MA"
+  },
+  {
+    "Zip": 3060,
+    "Hours": 1816,
+    "Area": "Nashua, NH"
+  },
+  {
+    "Zip": 3055,
+    "Hours": 830.5,
+    "Area": "Milford, NH"
+  },
+  {
+    "Zip": 2121,
+    "Hours": 1059,
+    "Area": "Dorchester, MA"
+  },
+  {
+    "Zip": 3054,
+    "Hours": 426,
+    "Area": "Merrimack, NH"
+  },
+  {
+    "Zip": 3104,
+    "Hours": 306,
+    "Area": "Manchester, NH"
+  },
+  {
+    "Zip": 3102,
+    "Hours": 672,
+    "Area": "Manchester, NH"
+  },
+  {
+    "Zip": 2115,
+    "Hours": 49,
+    "Area": "Boston, MA"
+  },
+  {
+    "Zip": 1902,
+    "Hours": 111.5,
+    "Area": "Lynn, MA"
+  },
+  {
+    "Zip": 1901,
+    "Hours": 99,
+    "Area": "Lynn, MA"
+  },
+  {
+    "Zip": 2110,
+    "Hours": 434,
+    "Area": "Boston, MA"
+  },
+  {
+    "Zip": 2144,
+    "Hours": 198,
+    "Area": "Somerville, MA"
+  },
+  {
+    "Zip": 1852,
+    "Hours": 1394,
+    "Area": "Lowell, MA"
+  },
+  {
+    "Zip": 1843,
+    "Hours": 348,
+    "Area": "Lawrence, MA"
+  },
+  {
+    "Zip": 1854,
+    "Hours": 72,
+    "Area": "Lowell, MA"
+  },
+  {
+    "Zip": 2155,
+    "Hours": 359,
+    "Area": "Medford, MA"
+  },
+  {
+    "Zip": 2421,
+    "Hours": 844.5,
+    "Area": "Lexington, MA"
+  },
+  {
+    "Zip": 2176,
+    "Hours": 112,
+    "Area": "Melrose, MA"
+  },
+  {
+    "Zip": 1451,
+    "Hours": 135,
+    "Area": "Harvard, MA"
+  },
+  {
+    "Zip": 2420,
+    "Hours": 193.5,
+    "Area": "Lexington, MA"
+  },
+  {
+    "Zip": 2120,
+    "Hours": 481,
+    "Area": "Roxbury Crossing, MA"
+  },
+  {
+    "Zip": 1773,
+    "Hours": 1248,
+    "Area": "Lincoln, MA"
+  },
+  {
+    "Zip": 2478,
+    "Hours": 228,
+    "Area": "Belmont, MA"
+  },
+  {
+    "Zip": 1876,
+    "Hours": 105,
+    "Area": "Tewksbury, MA"
+  },
+  {
+    "Zip": 1841,
+    "Hours": 268.5,
+    "Area": "Lawrence, MA"
+  },
+  {
+    "Zip": 6278,
+    "Hours": 88,
+    "Area": "Ashford, CT"
+  },
+  {
+    "Zip": 1701,
+    "Hours": 1034.5,
+    "Area": "Framingham, MA"
+  },
+  {
+    "Zip": 1453,
+    "Hours": 78,
+    "Area": "Leominster, MA"
+  },
+  {
+    "Zip": 2452,
+    "Hours": 176,
+    "Area": "Waltham, MA"
+  },
+  {
+    "Zip": 1527,
+    "Hours": 108,
+    "Area": "Millbury, MA"
+  },
+  {
+    "Zip": 2127,
+    "Hours": 1678,
+    "Area": "South Boston, MA"
+  },
+  {
+    "Zip": 1702,
+    "Hours": 840,
+    "Area": "Framingham, MA"
+  },
+  {
+    "Zip": 2151,
+    "Hours": 94.5,
+    "Area": "Revere, MA"
+  },
+  {
+    "Zip": 2114,
+    "Hours": 1035.62,
+    "Area": "Boston, MA"
+  },
+  {
+    "Zip": 2038,
+    "Hours": 168,
+    "Area": "Franklin, MA"
+  },
+  {
+    "Zip": 3079,
+    "Hours": 90,
+    "Area": "Salem, NH"
+  },
+  {
+    "Zip": 2142,
+    "Hours": 254.75,
+    "Area": "Cambridge, MA"
+  },
+  {
+    "Zip": 2149,
+    "Hours": 371,
+    "Area": "Everett, MA"
+  },
+  {
+    "Zip": 1810,
+    "Hours": 105,
+    "Area": "Andover, MA"
+  },
+  {
+    "Zip": 1826,
+    "Hours": 68,
+    "Area": "Dracut, MA"
+  },
+  {
+    "Zip": 1749,
+    "Hours": 60,
+    "Area": "Hudson, MA"
+  },
+  {
+    "Zip": 1742,
+    "Hours": 36,
+    "Area": "Concord, MA"
+  },
+  {
+    "Zip": 2126,
+    "Hours": 440.5,
+    "Area": "Mattapan, MA"
+  },
+  {
+    "Zip": 2056,
+    "Hours": 105,
+    "Area": "Norfolk, MA"
+  },
+  {
+    "Zip": 1752,
+    "Hours": 1923,
+    "Area": "Marlborough, MA"
+  },
+  {
+    "Zip": 2136,
+    "Hours": 37.5,
+    "Area": "Hyde Park, MA"
+  },
+  {
+    "Zip": 2189,
+    "Hours": 85,
+    "Area": "East Weymouth, MA"
+  },
+  {
+    "Zip": 2132,
+    "Hours": 284,
+    "Area": "West Roxbury, MA"
+  },
+  {
+    "Zip": 1106,
+    "Hours": 285,
+    "Area": "Longmeadow, MA"
+  },
+  {
+    "Zip": 2180,
+    "Hours": 150,
+    "Area": "Stoneham, MA"
+  },
+  {
+    "Zip": 92113,
+    "Hours": 56,
+    "Area": "San Diego, CA"
+  },
+  {
+    "Zip": "Boston",
+    "Hours": 28,
+    "Area": "Boston, MA"
+  },
+  {
+    "Zip": 2108,
+    "Hours": 484,
+    "Area": "Boston, MA"
+  },
+  {
+    "Zip": 1604,
+    "Hours": 364,
+    "Area": "Worcester, MA"
+  },
+  {
+    "Zip": 2134,
+    "Hours": 48,
+    "Area": "Allston, MA"
+  },
+  {
+    "Zip": "",
+    "Hours": 116,
+    "Area": "Boston, MA"
+  },
+  {
+    "Zip": 1720,
+    "Hours": 910,
+    "Area": "Acton, MA"
+  },
+  {
+    "Zip": 1748,
+    "Hours": 256,
+    "Area": "Hopkinton, MA"
+  },
+  {
+    "Zip": 2453,
+    "Hours": 170,
+    "Area": "Waltham, MA"
+  },
+  {
+    "Zip": 1844,
+    "Hours": 328,
+    "Area": "Methuen, MA"
+  },
+  {
+    "Zip": 2476,
+    "Hours": 88,
+    "Area": "Arlington, MA"
+  },
+  {
+    "Zip": 91436,
+    "Hours": 135,
+    "Area": "Encino, CA"
+  },
+  {
+    "Zip": 50258,
+    "Hours": 397,
+    "Area": "Union, IA"
+  },
+  {
+    "Zip": 92105,
+    "Hours": 56,
+    "Area": "San Diego, CA"
+  },
+  {
+    "Zip": 92101,
+    "Hours": 91,
+    "Area": "San Diego, CA"
+  },
+  {
+    "Zip": 92123,
+    "Hours": 91,
+    "Area": "San Diego, CA"
+  },
+  {
+    "Zip": 1545,
+    "Hours": 150,
+    "Area": "Shrewsbury, MA"
+  },
+  {
+    "Zip": 1603,
+    "Hours": 912,
+    "Area": "Worcester, MA"
+  },
+  {
+    "Zip": 2138,
+    "Hours": 244,
+    "Area": "Cambridge, MA"
+  },
+  {
+    "Zip": 2111,
+    "Hours": 71,
+    "Area": "Boston, MA"
+  },
+  {
+    "Zip": 1610,
+    "Hours": 300,
+    "Area": "Worcester, MA"
+  },
+  {
+    "Zip": 1908,
+    "Hours": 48,
+    "Area": "Nahant, MA"
+  },
+  {
+    "Zip": 1886,
+    "Hours": 80.75,
+    "Area": "Westford, MA"
+  },
+  {
+    "Zip": 3061,
+    "Hours": 38.5,
+    "Area": "Nashua, NH"
+  },
+  {
+    "Zip": 2131,
+    "Hours": 92,
+    "Area": "Roslindale, MA"
+  },
+  {
+    "Zip": 2163,
+    "Hours": 0,
+    "Area": "Boston, MA"
+  },
+  {
+    "Zip": 2215,
+    "Hours": 0,
+    "Area": "Boston, MA"
+  },
+  {
+    "Zip": 2467,
+    "Hours": 0,
+    "Area": "Chestnut Hill, MA"
+  },
+  {
+    "Zip": 2199,
+    "Hours": 0,
+    "Area": "Boston, MA"
+  },
+  {
+    "Zip": 2203,
+    "Hours": 0,
+    "Area": "Boston, MA"
+  },
+  {
+    "Zip": 2109,
+    "Hours": 0,
+    "Area": "Boston, MA"
+  },
+  {
+    "Zip": 2113,
+    "Hours": 0,
+    "Area": "Boston, MA"
+  },
+  {
+    "Zip": 2152,
+    "Hours": 0,
+    "Area": "Winthrop, MA"
+  }
+]

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/ui-lightness/jquery-ui.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+<body>
+    <button class="button button1" style="float: left;" onclick="updateYaxis()">Zoom on Ratings</button>
+  <center>
+    <div id="graph" class="aGraph"></div>
+  </center>
+
+<!-- load the d3.js library -->
+<script src="https://d3js.org/d3.v3.min.js"></script>
+
+<script>
+//margins for the visualization
+var margin = {top: 40, right: 80, bottom: 80, left: 80},
+    width = 1000 - margin.right - margin.left;
+    height = 400 - margin.top - margin.bottom;
+
+//x range
+var x = d3.scale.linear().range([0, width]);
+
+//y range
+var y = d3.scale.linear().range([height, 0]);
+
+
+// Define the x axis ticks
+var xAxis = d3.svg.axis().scale(x).tickSize(-height).ticks(11);
+
+// Define the y axis ticks
+var yAxis = d3.svg.axis().scale(y).ticks(10).orient("left");
+
+
+//define the graph
+var graph = d3.select("#graph").append("svg:svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform",
+                  "translate(" + margin.left + "," + margin.top + ")");
+
+
+    var clip = graph.append("defs").append("svg:clipPath")
+     .attr("id", "clip")
+     .append("svg:rect")
+     .attr("id", "clip-rect")
+     .attr("x", "0")
+     .attr("y", "0")
+     .attr("width", width)
+     .attr("height", height);
+
+
+// Get the import datas for starting graph
+d3.csv("SurveyData.csv", function(error, data) {
+    data.forEach(function(d) {
+        d.totalvolunteers = +d.totalvolunteers;
+        d.q1 = +d.q1;
+        d.q2 = +d.q2;
+        d.q3 = +d.q3;
+        d.q4 = +d.q4;
+        d.q5 = +d.q5;
+        d.q6 = +d.q6;
+        d.q7 = +d.q7;
+        d.q8 = +d.q8;
+        d.q9 = +d.q9;
+        d.q10 = +d.q10;
+    });
+
+  sData = data
+
+  //Getting the aggregated average rating for each question 1-10
+  averageq1 = d3.nest()
+  .key(function(d) { return d.totalvolunteers;})
+  .rollup(function(d) {
+   return d3.mean(d, function(g) {return g.q1; });
+   }).entries(data);
+   averageq1.forEach(function(d) {
+     d.totalvolunteers = +d.key;
+     d.q1 = +d.values;
+   });
+
+   averageq2 = d3.nest()
+   .key(function(d) { return d.totalvolunteers;})
+   .rollup(function(d) {
+    return d3.mean(d, function(g) {return g.q2; });
+    }).entries(data);
+    averageq2.forEach(function(d) {
+      d.totalvolunteers = +d.key;
+      d.q2 = +d.values;
+
+    });
+
+    averageq3 = d3.nest()
+    .key(function(d) { return d.totalvolunteers;})
+    .rollup(function(d) {
+     return d3.mean(d, function(g) {return g.q3; });
+     }).entries(data);
+     averageq3.forEach(function(d) {
+       d.totalvolunteers = +d.key;
+       d.q3 = d.values;
+     });
+
+     averageq4 = d3.nest()
+     .key(function(d) { return d.totalvolunteers;})
+     .rollup(function(d) {
+      return d3.mean(d, function(g) {return g.q4; });
+      }).entries(data);
+      averageq4.forEach(function(d) {
+        d.totalvolunteers = +d.key;
+        d.q4 = d.values;
+      });
+
+      averageq5 = d3.nest()
+      .key(function(d) { return d.totalvolunteers;})
+      .rollup(function(d) {
+       return d3.mean(d, function(g) {return g.q5; });
+       }).entries(data);
+       averageq5.forEach(function(d) {
+         d.totalvolunteers = +d.key;
+         d.q5 = d.values;
+       });
+
+       averageq6 = d3.nest()
+       .key(function(d) { return d.totalvolunteers;})
+       .rollup(function(d) {
+        return d3.mean(d, function(g) {return g.q6; });
+        }).entries(data);
+        averageq6.forEach(function(d) {
+          d.totalvolunteers = +d.key;
+          d.q6 = d.values;
+        });
+
+        averageq7 = d3.nest()
+        .key(function(d) { return d.totalvolunteers;})
+        .rollup(function(d) {
+         return d3.mean(d, function(g) {return g.q7; });
+         }).entries(data);
+         averageq7.forEach(function(d) {
+           d.totalvolunteers = +d.key;
+           d.q7 = d.values;
+         });
+
+         averageq8 = d3.nest()
+         .key(function(d) { return d.totalvolunteers;})
+         .rollup(function(d) {
+          return d3.mean(d, function(g) {return g.q8; });
+          }).entries(data);
+          averageq8.forEach(function(d) {
+            d.totalvolunteers = +d.key;
+            d.q8 = d.values;
+          });
+
+        averageq9 = d3.nest()
+        .key(function(d) { return d.totalvolunteers;})
+        .rollup(function(d) {
+         return d3.mean(d, function(g) {return g.q9; });
+           }).entries(data);
+           averageq9.forEach(function(d) {
+             d.totalvolunteers = +d.key;
+             d.q9 = d.values;
+           });
+
+        averageq10 = d3.nest()
+        .key(function(d) { return d.totalvolunteers;})
+       .rollup(function(d) {
+        return d3.mean(d, function(g) {return g.q10; });
+          }).entries(data);
+          averageq10.forEach(function(d) {
+            d.totalvolunteers = +d.key;
+            d.q10 = d.values;
+          });
+
+    // Scale the range of the data
+    x.domain([0, d3.max(averageq2, function(d) { return d.totalvolunteers; })]);
+    y.domain([0,5]);
+
+    //defining the line
+   line = d3.svg.line().interpolate("linear")
+    .x(function(d) { return x(d.key); })
+    .y(function(d) { return y(d.values); });
+
+
+
+    // Add the X Axis
+    graph.append("svg:g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
+    // Add the Y Axis
+    graph.append("svg:g")
+        .attr("class", "y axis")
+        .call(yAxis);
+      //labeling the X axis
+      graph.append("svg:g")
+        .append("text")
+          .attr("fill", "#000")
+          .attr('font-size', '14')
+          .attr("y", height + 30)
+          .attr("x", width/3 + 30)
+          .text("Size of Project (# of volunteers)");
+      // label for the Y axis
+      graph.append("svg:g")
+          .append('text')
+          .attr('font-size', '14')
+          .attr("text-anchor", "middle")  // center the text
+          .attr("transform", "translate("+ (-40) +","+(150)+")rotate(-90)")  // from top left, move and rotate
+          .text("Average Rating");
+      //Title for the graph
+      graph.append("svg:g")
+          .append("text")
+          .attr("fill", "#000")
+          .attr('font-size', '16')
+          .attr("y", -10)
+          .attr("x", width/3 + 120)
+          .attr("text-anchor", "middle")
+          .text("Project Size VS Project Satisfaction");
+});
+// update the graph to show all selected lines
+function update() {
+    for (i = 1; i <= document.querySelectorAll('input[type="checkbox"]').length; i++) {
+    if (document.getElementById('q' + i).checked) {
+      if (!document.getElementById('q' + i + 'l')){
+      graph.append("svg:g").append("path")
+            .attr("class", "line")
+            .attr("clip-path", "url(#clip)")
+            .attr('id', 'q' + i + 'l')
+            .attr('stroke-width', 3)
+            .attr("stroke", function(d){
+              switch (i){
+              case 1:
+                return 'red';
+                break;
+              case 2:
+                return "green";
+                break;
+              case 3:
+                return "yellow";
+                break;
+              case 4:
+                return "blue";
+                break;
+              case 5:
+                return "navy";
+                break;
+              case 6:
+                return "aqua";
+                break;
+              case 7:
+                return "teal";
+                break;
+              case 8:
+                return "olive";
+                break;
+              case 9:
+                return "maroon";
+                break;
+              case 10:
+                return "black";
+              }
+            })
+            .attr("d", line(d3.nest()
+            .key(function(d) { return d.totalvolunteers;})
+            .rollup(function(d) {
+             return d3.mean(d, function(g) {
+               switch (i) {
+                  case 1:
+                    return +g.q1;
+                    break;
+                  case 2:
+                    return +g.q2;
+                    break;
+                  case 3:
+                    return +g.q3;
+                    break;
+                  case 4:
+                    return +g.q4;
+                    break;
+                  case 5:
+                    return +g.q5;
+                    break;
+                  case 6:
+                    return +g.q6;
+                    break;
+                  case 7:
+                    return +g.q7;
+                    break;
+                  case 8:
+                    return +g.q8;
+                    break;
+                  case 9:
+                    return +g.q9;
+                    break;
+                  case 10:
+                    return +g.q10;
+                    break;
+               }
+             });
+           }).entries(sData)));
+         }
+    } else {
+      d3.select("#q" + i + "l").remove()
+    }
+  }
+}
+//update the graph everytime the X range is changed via the slider
+function updateOnZoom() {
+    d3.selectAll("path.line").remove();
+    for (i = 1; i <= document.querySelectorAll('input[type="checkbox"]').length; i++) {
+    if (document.getElementById('q' + i).checked) {
+      graph.append("svg:g").append("path")
+            .attr("class", "line")
+            .attr("clip-path", "url(#clip)")
+            .attr('id', 'q' + i + 'l')
+            .attr('stroke-width', 3)
+            .attr("stroke", function(d){
+              switch (i){
+                case 1:
+                  return 'red';
+                  break;
+                case 2:
+                  return "green";
+                  break;
+                case 3:
+                  return "yellow";
+                  break;
+                case 4:
+                  return "blue";
+                  break;
+                case 5:
+                  return "navy";
+                  break;
+                case 6:
+                  return "aqua";
+                  break;
+                case 7:
+                  return "teal";
+                  break;
+                case 8:
+                  return "olive";
+                  break;
+                case 9:
+                  return "maroon";
+                  break;
+                case 10:
+                  return "black";
+              }
+            })
+            .attr("d", line(d3.nest()
+            .key(function(d) { return d.totalvolunteers;})
+            .rollup(function(d) {
+             return d3.mean(d, function(g) {
+               switch (i) {
+                  case 1:
+                    return +g.q1;
+                    break;
+                  case 2:
+                    return +g.q2;
+                    break;
+                  case 3:
+                    return +g.q3;
+                    break;
+                  case 4:
+                    return +g.q4;
+                    break;
+                  case 5:
+                    return +g.q5;
+                    break;
+                  case 6:
+                    return +g.q6;
+                    break;
+                  case 7:
+                    return +g.q7;
+                    break;
+                  case 8:
+                    return +g.q8;
+                    break;
+                  case 9:
+                    return +g.q9;
+                    break;
+                  case 10:
+                    return +g.q10;
+                    break;
+               }
+             });
+           }).entries(sData)));
+    } else {
+      d3.select("#q" + i + "l").remove()
+    }
+  }
+}
+
+//update the Y axis when the zoom button is hit
+// either zoom in or out.
+
+function updateYaxis(){
+  var t = graph.transition();
+  var dom = y.domain()
+  console.log(y.domain());
+  if (JSON.stringify(dom) === JSON.stringify([0,5])){
+    y.domain([3,5]);
+    var size = 5 - 3;
+    var step = size / 10;
+    var ticks = [];
+    for (var i = 0; i <= 10; i++) {
+      ticks.push(3 + step * i);
+    }
+    yAxis.tickValues(ticks);
+    t.select(".y.axis").call(yAxis);
+    updateOnZoom();
+  }
+  else {
+    y.domain([0,5]);
+    var size = 5 - 0;
+    var step = size / 10;
+    var ticks = [];
+    for (var i = 0; i <= 10; i++) {
+      ticks.push(0 + step * i);
+    }
+    yAxis.tickValues(ticks);
+    t.select(".y.axis").call(yAxis);
+    updateOnZoom();
+
+  }
+}
+
+
+//function for the range change transition
+function zoom(begin, end) {
+    x.domain([begin, end - 1]);
+
+    var t = graph.transition().duration(0);
+    var size = end - begin;
+    var step = size / 11;
+    var ticks = [];
+    for (var i = 0; i <= 10; i++) {
+      ticks.push(Math.floor(begin + step * i));
+    }
+    xAxis.tickValues(ticks);
+    t.select(".x.axis").call(xAxis);
+    updateOnZoom();
+    }
+  //ajax to change slider range
+  $(function() {
+        $( "#slider-range" ).slider({
+            range: true,
+            min: 0,
+            max: 65,
+            values: [ 0, 65 ],
+            slide: function( event, ui ) {
+              var begin = d3.min([ui.values[0], 65]);
+              var end = d3.max([ui.values[1], 0]);
+              zoom(begin, end);
+            }
+        });
+    });
+</script>
+<!-- slider html -->
+<div id="slider-range" style="width: 80%px; margin-left:10%; margin-right:10%"></div>
+<!-- Buttons for each question category -->
+<div id="formdiv">
+<form action="">
+  <div id="line1" >
+  <div id="q1Container">
+    <center>
+    <h5>Introduction Satisfaction</h5>
+      <div class="checkbox1" style="display: inline-block">
+        <input type="checkbox" value="1" id="q1" name="" onclick="update()"/>
+        <label title="I feel the information I was given (project description, schedule, directions, etc) prior to the project adequately prepared me for the day." for="q1"></label>
+      </div>
+    </center>
+  </div>
+  <div id="q2Container">
+    <center>
+    <h5>Information Satisfaction</h5>
+      <div class="checkbox2" style="display: inline-block">
+        <input type="checkbox" value="1" id="q2" name="" onclick="update()"/>
+        <label title="I was provided a good introduction by the agency staff about the work they do and the work we were given." for="q2"></label>
+      </div>
+    </center>
+  </div>
+  <div id="q3Container">
+    <center>
+    <h5>Well Organized</h5>
+      <div class="checkbox3" style="display: inline-block">
+        <input type="checkbox" value="1" id="q3" name="" onclick="update()"/>
+        <label title=" I feel the project was well organized. (e.g. task assignments, adaquate supplies, etc)" for="q3"></label>
+      </div>
+    </center>
+  </div>
+  <div id="q4Container">
+    <center>
+    <h5>Understood Community Need</h5>
+      <div class="checkbox4" style="display: inline-block">
+        <input type="checkbox" value="1" id="q4" name="" onclick="update()"/>
+        <label title="I understand how the work I was doing responded to a community need." for="q4"></label>
+      </div>
+    </center>
+  </div>
+</div>
+</center>
+  <div id="q5Container">
+    <center>
+    <h5>Well Utilized Time</h5>
+      <div class="checkbox5" style="display: inline-block">
+        <input type="checkbox" value="1" id="q5" name="" onclick="update()"/>
+        <label title="I feel that my time was well utilized and my efforts were appreciated." for="q5"></label>
+      </div>
+    </center>
+  </div>
+  <div id="q6Container">
+    <center>
+    <h5>Personal Satisfaction</h5>
+      <div class="checkbox6" style="display: inline-block">
+        <input type="checkbox" value="1" id="q6" name="" onclick="update()"/>
+        <label title="The work I did was personally satisfying." for="q6"></label>
+      </div>
+    </center>
+  </div>
+  <div id="q7Container">
+    <center>
+    <h5>Positive Interactions with Boston Cares Leaders</h5>
+      <div class="checkbox7" style="display: inline-block">
+        <input type="checkbox" value="1" id="q7" name="" onclick="update()"/>
+        <label title="My interactions with Boston Cares Project Leaders were positive." for="q7"></label>
+      </div>
+    </center>
+  </div>
+  <div id="q8Container">
+    <center>
+    <h5>Positive Interaction with Staff</h5>
+      <div class="checkbox8" style="display: inline-block">
+        <input type="checkbox" value="1" id="q8" name="" onclick="update()"/>
+        <label title="My interactions with the host site staff were positive." for="q8"></label>
+      </div>
+    </center>
+  </div>
+  <div id="q9Container">
+    <center>
+    <h5>Worthwhile Project</h5>
+      <div class="checkbox9" style="display: inline-block">
+        <input type="checkbox" value="1" id="q9" name="" onclick="update()"/>
+        <label title="Overall, I feel the volunteer project was worthwhile." for="q9"></label>
+      </div>
+    </center>
+  </div>
+  <div id="q10Container">
+    <center>
+    <h5>Would Consider Volunteering Again</h5>
+      <div class="checkbox10" style="display: inline-block">
+        <input type="checkbox" value="1" id="q10" name="" onclick="update()"/>
+        <label title="As a result of this experience, I would consider volunteering with this project again." for="q10"></label>
+      </div>
+    </center>
+  </div>
+</form>
+</div>
+</body>

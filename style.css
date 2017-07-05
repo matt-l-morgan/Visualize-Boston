@@ -1,0 +1,418 @@
+.button {
+    background-color: #28388E;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 2px 1px;
+    cursor: pointer;
+		transition: .5s ease;
+}
+
+.button1{
+	border-radius: 12px;
+}
+
+
+/**
+ * hide the usual check boxes
+ */
+input[type=checkbox] {
+	visibility: hidden;
+}
+body { font: 12px Arial;}
+path {
+    fill: none;
+}
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+/**
+ * create button for q1
+ */
+.checkbox1 label {
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: 100px;
+
+	transition: all .5s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 1;
+
+	background: #D3D3D3;
+	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+ .checkbox1 input[type=checkbox]:checked + label {
+ 	background: #FF0000;
+ }
+.checkbox1 {
+	width: 30px;
+	height: 30px;
+	background: #ddd;
+	margin: 3px 30px;
+
+	border-radius: 100%;
+	position: relative;
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+#q1Container {
+  float:left;
+}
+
+/* styling for q2 botton
+*-------------------------------------------------------------------------------
+*/
+
+.checkbox2 label {
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: 100px;
+
+	transition: all .5s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 1;
+
+	background: #D3D3D3;
+	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+ .checkbox2 input[type=checkbox]:checked + label {
+ 	background: #008000;
+ }
+.checkbox2 {
+	width: 30px;
+	height: 30px;
+	background: #ddd;
+	margin: 3px 30px;
+
+	border-radius: 100%;
+	position: relative;
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+#q2Container {
+  float:left;
+  margin: 0px 20px
+}
+
+/* styling for q3 botton
+*-------------------------------------------------------------------------------
+*/
+
+.checkbox3 label {
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: 100px;
+
+	transition: all .5s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 1;
+
+	background: #D3D3D3;
+	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+ .checkbox3 input[type=checkbox]:checked + label {
+ 	background: #FFFF00;
+ }
+.checkbox3 {
+	width: 30px;
+	height: 30px;
+	background: #ddd;
+	margin: 3px 30px;
+
+	border-radius: 100%;
+	position: relative;
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+#q3Container {
+  float:left;
+  margin: 0px 20px
+}
+
+/* styling for q4 botton
+*-------------------------------------------------------------------------------
+*/
+
+.checkbox4 label {
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: 100px;
+
+	transition: all .5s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 1;
+
+	background: #D3D3D3;
+	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+ .checkbox4 input[type=checkbox]:checked + label {
+ 	background: #0000FF;
+ }
+.checkbox4 {
+	width: 30px;
+	height: 30px;
+	background: #ddd;
+	margin: 3px 30px;
+
+	border-radius: 100%;
+	position: relative;
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+#q4Container {
+  float:left;
+  margin: 0px 20px
+}
+
+/* styling for q5 botton
+*-------------------------------------------------------------------------------
+*/
+
+.checkbox5 label {
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: 100px;
+
+	transition: all .5s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 1;
+
+	background: #D3D3D3;
+	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+ .checkbox5 input[type=checkbox]:checked + label {
+ 	background: #000080;
+ }
+.checkbox5 {
+	width: 30px;
+	height: 30px;
+	background: #ddd;
+	margin: 3px 30px;
+
+	border-radius: 100%;
+	position: relative;
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+#q5Container {
+  float:left;
+  margin: 0px 20px
+}
+
+/* styling for q6 botton
+*-------------------------------------------------------------------------------
+*/
+
+.checkbox6 label {
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: 100px;
+
+	transition: all .5s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 1;
+
+	background: #D3D3D3;
+	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+ .checkbox6 input[type=checkbox]:checked + label {
+ 	background: #00FFFF;
+ }
+.checkbox6 {
+	width: 30px;
+	height: 30px;
+	background: #ddd;
+	margin: 3px 30px;
+
+	border-radius: 100%;
+	position: relative;
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+#q6Container {
+  float:left;
+  margin: 0px 20px
+}
+
+/* styling for q7 botton
+*-------------------------------------------------------------------------------
+*/
+
+.checkbox7 label {
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: 100px;
+
+	transition: all .5s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 1;
+
+	background: #D3D3D3;
+	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+ .checkbox7 input[type=checkbox]:checked + label {
+ 	background: #008080;
+ }
+.checkbox7 {
+	width: 30px;
+	height: 30px;
+	background: #ddd;
+	margin: 3px 30px;
+
+	border-radius: 100%;
+	position: relative;
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+#q7Container {
+  float:left;
+  margin: 0px 20px
+}
+
+/* styling for q8 botton
+*-------------------------------------------------------------------------------
+*/
+
+.checkbox8 label {
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: 100px;
+
+	transition: all .5s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 1;
+
+	background: #D3D3D3;
+	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+ .checkbox8 input[type=checkbox]:checked + label {
+ 	background: #808000;
+ }
+.checkbox8 {
+	width: 30px;
+	height: 30px;
+	background: #ddd;
+	margin: 3px 30px;
+
+	border-radius: 100%;
+	position: relative;
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+#q8Container {
+  float:left;
+  margin: 0px 20px
+}
+/* styling for q9 botton
+*-------------------------------------------------------------------------------
+*/
+
+.checkbox9 label {
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: 100px;
+
+	transition: all .5s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 1;
+
+	background: #D3D3D3;
+	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+ .checkbox9 input[type=checkbox]:checked + label {
+ 	background: #800000;
+ }
+.checkbox9 {
+	width: 30px;
+	height: 30px;
+	background: #ddd;
+	margin: 3px 30px;
+
+	border-radius: 100%;
+	position: relative;
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+#q9Container {
+  float:left;
+  margin: 0px 20px
+}
+/* styling for q10 botton
+*-------------------------------------------------------------------------------
+*/
+
+.checkbox10 label {
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: 100px;
+
+	transition: all .5s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 1;
+
+	background: #D3D3D3;
+	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+ .checkbox10 input[type=checkbox]:checked + label {
+ 	background: #000000;
+ }
+.checkbox10 {
+	width: 30px;
+	height: 30px;
+	background: #ddd;
+	margin: 3px 30px;
+
+	border-radius: 100%;
+	position: relative;
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+#q10Container {
+  float:left;
+  margin: 0px 20px
+}
+form {
+  width: 900px;
+  margin: 0 auto;
+}
+/**
+*-------------------------------------------------------------------------------
+*/
