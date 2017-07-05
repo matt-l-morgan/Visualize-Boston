@@ -5,7 +5,6 @@ Matt Morgan,
 Ethan March,
 Soo Jung Rhee
 
-Link: https://github.ccs.neu.edu/ethmarch/VisualizeBoston.git
 Site: https://pages.github.ccs.neu.edu/ethmarch/VisualizeBoston/
 
 Visualization 1: The line graph displays the relationship between size of each
